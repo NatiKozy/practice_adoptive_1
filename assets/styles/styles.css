@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header {
+    background: #d4d0d0;
+    grid-area: header;
+    text-align: center;
+}
+
+.main {
+    display: grid;
+    background: #e2e051;
+    grid-area: main;
+    text-align: center;
+    gap: 20px;
+
+}
+
+.sidebar {
+    background: #4bf792;
+    grid-area: sidebar;
+    text-align: center;
+
+}
+
+
+.main-first-part {
+    display: flex;
+    justify-content: space-around;
+}
+
+.element1 {
+    width: 45%;
+    height: 100px;
+    border: 1px solid red;
+    text-align: center;
+    background: #e28e21;
+    margin: auto;
+}
+
+
+.element2 {
+    width: 45%;
+    height: 100px;
+    border: 1px solid red;
+    text-align: center;
+    background: #e28e21;
+    margin: auto;
+
+}
+
+
+.main-second-part {
+    display: flex;
+    justify-content: center;
+}
+
+.element3 {
+    text-align: center;
+    border: 1px solid red;
+    width: 95%;
+    height: 100px;
+    background: #e28e21;
+}
+
+
+@media screen and (min-width:1024px) {
+    .footer {
+        display: flex;
+        justify-content: space-around;
+        background: #d4d0d0;
+        grid-area: footer;
+    }
+
+    .footer__element1 {
+        border: 1px solid red;
+        width: 300px;
+        height: 100px;
+        text-align: center;
+        margin: 20px;
+        background: #d6a9f0;
+        align-self: center;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 10% 1fr 20%;
+        width: 100vw;
+        height: 90vh;
+        grid-template-areas: "header header header header"
+            "main main main sidebar"
+            "footer footer footer footer"
+        ;
+        font-size: large;
+        font-weight: 600;
+    }
+}
+
+
+@media screen and (min-width:768px)and (max-width:1023px) {
+
+    .footer,
+    .footer__element1 {
+        display: none;
+    }
+
+    .container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 10% 1fr;
+        width: 100vw;
+        height: 90vh;
+        grid-template-areas: "header header"
+            "main sidebar"
+        ;
+        font-size: large;
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width:767px) {
+
+    .footer,
+    .footer__element1 {
+        display: none;
+    }
+
+    .main {
+        height: 40vh;
+
+    }
+
+    .header {
+        height: 20vh;
+
+    }
+
+    .sidebar {
+        height: 40vh;
+
+    }
+}
